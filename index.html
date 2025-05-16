@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+
+
+    <div class="TimeVal"><span id="S_M_val">5</span> <span id="S_M">Minuts</span> = 365 Earth Days</div>
+         
+        <div class="changeUnits" id="changeUnits">
+            <div class="PropToggel" >Time.</div>
+             <div class="strips">
+                <button class=" btns update" id="btnLeft" style="float: left;" onclick="Addfun()">+</button>
+                <div class="input"><input type="text" class="inputTag " id="inputTag" value="30" placeholder="1"></div>
+                <button class="btns update" id="btnRight" style="float: left;" onclick="Minfun()">-</button>
+            </div>
+            <div class="strips">
+                <div class="tInp">Seconds :<input type="radio" class="update" name="selectTime" value="Seconds"
+                        id="Seconds"></div>
+                <div class="tInp">Minutes : <input type="radio" class="update" name="selectTime" value="Minutes"
+                        id="Minutes" checked></div>
+            </div>
+            <div class="strips">
+                Roration : <input type="checkbox" class="update" name="selectRotation" value="Minutes" id="Rotation"
+                    checked>
+            </div>
+        </div>
+    
+
+
+    <div class="hide" id="hide" onclick="hide()"></div>
+    <!-- <div class="info" id="info">
+        space temp 
+    </div> -->
+    <div class="PlanetInfo" id="PlanetInfo">
+        <div class="Info_Head">
+            <div onclick="hide()" class="HideTheInfo">X</div>
+            <div class="main_planet" id="main_planet">
+                <div class="Main_planet_body" id="Main_planet_body">
+                    <div class="Planet_Names" id="Planet_Names"></div>
+                </div>
+            </div>
+            <div class="Planet_Moons" id="Planet_Moons">
+                <!-- <div class="OtherMoons">Total 90 Moons</div> -->
+                <!-- <div class="moons"><div class="Planet_Names fonts" id="S_Moon">Deimos</div></div> -->
+            </div>
+        </div>
+        <div class="Info_Body">
+            <div class="Dif_Properties">
+                <div class="li" value="0" id="0">Physical </div>
+                <div class="li" value="1" id="1">Orbital</div>
+                <div class="li" value="2" id="2">Atmosphere</div>
+                <div class="li" value="3" id="3">Discovery</div>
+                <div class="li" value="4" id="4">Images</div>
+            </div>
+            <div class="Info_Main_Body" id="Info_Main_Body">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="newClassBase.js"></script>
+
+
+</html>

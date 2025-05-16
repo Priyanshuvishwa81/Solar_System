@@ -1,0 +1,412 @@
+:root {
+    --border: rgb(10, 207, 234);
+    --plenetMoons: rgb(90, 189, 90);
+    --planet: rgb(28, 215, 28);
+    --infoData: rgb(28, 215, 28);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    /* box-sizing: border-box; */
+    display: flex;
+    justify-content: center;
+    user-select: none;
+
+
+}
+
+#myCanvas {
+    background-color: rgb(78, 80, 80);
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+}
+
+.info {
+    height: 30vh;
+    width: 20vw;
+    position: absolute;
+    font-size: x-large;
+    bottom: 0px;
+    left: 0;
+    /* background-color: rgb(8,29,49); */
+    color: green;
+    /* opacity: .8; */
+}
+
+.inputTag {
+    /* height: 100%;
+    width: 100%; */
+    float: left;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+}
+
+.strips {
+    height: 25%;
+    /* background-color: rebeccapurple; */
+    /* border: 1px solid black; */
+    width: 100%;
+    margin-bottom:5px;
+    box-sizing: border-box;
+}
+
+.tInp{
+    /* background-color: #181818; */
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+}
+
+
+/* .btns {
+    height: 100%;
+    width: 30%;
+} */
+
+.hide {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0vw;
+    display: none;
+    background-color: rgb(45, 48, 51);
+    opacity: .3;
+    z-index: 6;
+}
+
+.HideTheInfo{
+    height: 6vh;
+    width: 3vw;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 0px 0px 20px;
+    background-color: #3f3333a2;
+    color:white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* padding: 10px; */
+    z-index: 9;
+}
+.HideTheInfo:hover{
+    background-color: #3f3333da;
+    font-weight: bolder;
+    box-shadow:  2px 4px 9px black;
+    color: rgb(235, 139, 139);
+}
+.TimeVal{
+    height: 5vh;
+    width: 100vw;
+    /* background-color: #181818; */
+    color: rgb(245, 238, 234);
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.changeUnits {
+    height: 20vh;
+    width: 20vw; 
+    position: absolute;
+    padding: 10px;
+    box-sizing: border-box;
+    left: -20vw;
+    bottom: 10vh;
+    /* background-color: black; */
+    box-shadow: -1px 0px 19px 0px black;
+    /* border: 1PX solid rgb(171, 68, 68); */
+    font-size: small;
+    color: #90d71e;
+    box-sizing: border-box;
+    z-index: 7;
+}
+
+
+
+.PropToggel{
+    height:80%;
+    width: 10%;
+    position: absolute;
+    right: -10%;
+    border-radius: 0px 20px 20px 0px ;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: #181818;
+    box-shadow: 4px 3px 8px 1px #787474;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: red;
+    /* z-index: 1; */
+}
+.PropToggel:hover{
+    box-shadow: 4px 3px 8px 1px #3d3232;
+}
+.PlanetInfo {
+    height: 100vh;
+    width: 40vw;
+    position: absolute;
+    right: -40vw;
+    /* right: 0vw; */
+    background-color: rgb(8, 29, 49);
+    transition-duration: 1s;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    overflow: auto;
+    opacity: .9;
+    z-index: 9;
+}
+
+.Info_Head {
+    width: 100%;
+    height: 15vh;
+    /* background-color: rgb(97, 107, 96); */
+    position: relative;
+    box-sizing: border-box;
+    user-select: none;
+
+}
+
+.main_planet {
+    width: 20%;
+    float: left;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Main_planet_body {
+    height: 60px;
+    width: 60px;
+    background-color: #c16e79;
+
+    box-shadow: inset 14px -11px 13px 0px #181818;
+    /* margin: 10px; */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: var(--planet);
+    cursor: pointer;
+}
+
+.Main_planet_body:hover {
+    /* background-color: aliceblue; */
+    box-shadow: inset 1px -2px 10px 3px #1a1a1a;
+    color: #90d71e
+}
+
+.Planet_Names {
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+    /* width: 100%; */
+    position: absolute;
+    bottom: -20%;
+    word-wrap: break-word;
+    white-space: normal;
+
+    /* background-color: black; */
+}
+
+
+.Planet_Moons {
+    width: 80%;
+    height: 16vh;
+    float: left;
+    /* background-color: blue; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    padding-top: 10px;
+
+    color: var(--plenetMoons);
+
+}
+
+.fonts {
+    font-size: small;
+}
+
+.OtherMoons {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 0px 10px;
+    /* border: 1px solid var(--border); */
+    /* border-radius: 10px; */
+    font-weight: bold;
+    /* font-size: small; */
+    /* padding: 2px; */
+    color: rgb(205, 43, 43);
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.moons {
+    display: inline-block;
+    height: 50px;
+    position: relative;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(163, 162, 226);
+    box-shadow: inset 14px -11px 13px 0px #181818;
+    margin: 2px;
+    border: 1px solid black;
+    /* border-radius: 10px; */
+    font-weight: bold;
+    cursor: pointer;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.Info_Body {
+    width: 100%;
+    height: 80vh;
+    box-sizing: border-box;
+    position: relative;
+    /* background-color: rgb(26, 50, 50); */
+}
+
+.Dif_Properties {
+    width: 100%;
+    height: 5vh;
+    box-sizing: border-box;
+    display: flex;
+    /* margin-top: 15px; */
+    justify-content: space-around;
+    user-select: none;
+}
+
+.li {
+    height: 100%;
+    width: 25%;
+    background-color: rgb(40, 108, 60);
+    color: rgb(227, 247, 4);
+    border: 1px solid rgb(62, 91, 63);
+    text-align: center;
+    cursor: pointer;
+}
+
+.li:hover {
+    background-color: rgb(70, 113, 150);
+}
+
+.moons:hover {
+    /* background-color: rgb(70, 113, 150); */
+    box-shadow: inset 1px -2px 10px 3px #1a1a1a;
+    color: #e7e9ee
+        /* border: 3px solid red; */
+
+}
+
+.Info_Main_Body {
+    height: 95%;
+    padding: 5px;
+    overflow-x: auto;
+    box-sizing: border-box;
+    color: var(--infoData);
+}
+
+.data {
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+    /* background-color: blue; */
+    padding: 10px;
+}
+
+.data_Key {
+    /* float: left; */
+
+    /* height: 5vh; */
+    width: 55%;
+    box-sizing: border-box;
+    font-size: x-large;
+    display: inline-block;
+}
+
+.data_Value {
+    /* float: left; */
+    /* height: 5vh; */
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40%;
+    font-size: large;
+}
+
+/* .data_Unit{
+    float: left;
+    height: 5vh;
+    box-sizing: border-box;
+    width: 9%;
+    font-size: large;
+    display: flex;
+    align-items: center;
+} */
+
+
+@media only screen and (max-width:890px) and (min-width:560px) {
+
+    .PlanetInfo {
+        width: 60vw;
+        /* max-width: none; */
+        position: absolute;
+        right: -60vw;
+        /* padding: 10px; */
+
+    }
+    .changeUnits{
+        width: 50vw;
+        position: absolute;
+        left: -50vw;
+    }
+
+
+}
+
+@media only screen and (max-width:560px) and (min-width:360px) {
+    .PlanetInfo {
+        width: 90vw;
+
+        position: absolute;
+        right: -90vw;
+    }
+
+    .changeUnits{
+        width: 70vw;
+        position: absolute;
+        left: -70vw;
+    }
+
+}
+
+
+@media only screen and (max-width:360px) and (min-width:200px) {
+
+    .PlanetInfo {
+        width: 90vw;
+        position: absolute;
+        right: -90vw;
+        /* padding: 10px; */
+    }
+    .changeUnits{
+        width: 90vw;
+        position: absolute;
+        left: -90vw;
+    }
+
+}
